@@ -18,7 +18,7 @@ app.use(express.urlencoded({limit:"30mb",extended:true}))
 app.use('/uploads',express.static(path.join('uploads')))
 
 
-// var __dirname = path.resolve();
+var __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, './youtube/build')));
 app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, './youtube/build/index.html'))
